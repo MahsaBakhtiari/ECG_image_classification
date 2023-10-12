@@ -1,5 +1,5 @@
 # Heart AI
-## This project tries to design two neural network models, one to predict patients' heart attack chances and the other to analyze their ECG images.
+
 
 ## ECG Image Classification
 A CNN model to classify ECG images into four classes. 
