@@ -23,6 +23,14 @@ As discussed before, ECGs are one of the main sensory methods used by physicians
 #### Data Preprocessing
 The original images have a resolution of 2213 x 1572. This resolution is very inefficient for deep learning processing as it quickly fills the precious GPU memory with large feature maps. In order to make the problem practical, I downsapled the images to a resolution of 182 x 256 to keep their original aspect ratio. It is important to use the correct downsampling algorithm so that the ECG lines are still visible and their tiny fluctuations are not destroyed. For this purpose I visually inspected the down sampled images and the "area" interpolation approach yielded the best results.
 
+#### ViT Architecture
+Vision Transformer is a recent image processing deep learning model introduced that heavily uses self attention instead of convolutions for processing. Self Attention is popularized by the seminal transformers paper that is now regarded as the main backbone for all large language models including ChatGPT. The main idea behind ViT is to first "patchify" image pixels into non-overlapping 8x8 blocks first, and then projecting each image patch into a higher dimensional vector. Then the transformer blocks are used to process all of these image patches together by using self attention and MLP (multi-layered perceptron) blocks. The transformer blocks used in ViT is identical to tranformer blocks used in most of state of the art LLMs. A visual depiction of the ViT model is shown below.
+
+![test](http://blog.wangluyuan.cc/img/brief-vit/vit.png)
+
+#### ViT model for ECG heart desease detection
+I implemented the ViT architecture with TensorFlow's Keras library and trained it on the training set split of the ECG dataset. Since this is a classification problem I used the `SparseCategoricalCrossEntropy` loss on the 4 input classes. To avoid overfitting, I also used weight decay within the `Adam` optimizer which improved the validation accuracy from 76% without weight decay to 86% with weight decay. I also reduced the number of training epochs from 40 to 35 to address the overfitting problem in addition to weight decay.
+
 ## Resources
 * https://data.mendeley.com/datasets/gwbz3fsgp8/2
 * https://www.kaggle.com/datasets/iamsouravbanerjee/heart-attack-prediction-dataset/
