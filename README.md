@@ -33,5 +33,4 @@ I implemented the ViT architecture with TensorFlow's Keras library and trained i
 
 ## Resources
 * https://data.mendeley.com/datasets/gwbz3fsgp8/2
-* https://www.kaggle.com/datasets/iamsouravbanerjee/heart-attack-prediction-dataset/
 
