@@ -1,4 +1,4 @@
-![](https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20220524125449/ri/1350/src/images/news/ImageForNews_714632_16533680880418469.jpg)
+![](https://www.healthcareitnews.com/sites/hitn/files/BHF.jpg)
 
 ## ECG Image Classification
 ### An overview of Electrocardiogram (ECG or EKG) 
@@ -16,6 +16,7 @@ As discussed before, ECGs are one of the main sensory methods used by physicians
 * Myocardial Infarction
 * Abnormal Heart Beat
 * Have a History of Myocardial Infraction
+
 ![](https://osmose-it.s3.amazonaws.com/K4zwYlFjRDmFLIrJ65Ge0Qq7T3uF2pEY/_.jpg)
 
 #### Data Preprocessing
@@ -28,6 +29,7 @@ Vision Transformer is a recent image processing deep learning model introduced t
 
 #### ViT model for ECG heart desease detection
 I implemented the ViT architecture with TensorFlow's Keras library and trained it on the training set split of the ECG dataset. Since this is a classification problem I used the `SparseCategoricalCrossEntropy` loss on the 4 input classes. To avoid overfitting, I also used weight decay within the `Adam` optimizer which improved the validation accuracy from 76% without weight decay to 86% with weight decay. I also reduced the number of training epochs from 40 to 35 to address the overfitting problem in addition to weight decay.
+
 ![](https://github.com/MahsaBakhtiari/ECG_image_classification/assets/125718782/f826c533-cb5e-4b62-93d1-c9a06df1b465)
 
 ## Resources
