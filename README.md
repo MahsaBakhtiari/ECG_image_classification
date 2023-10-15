@@ -1,5 +1,4 @@
-# Heart AI
-
+![](https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20220524125449/ri/1350/src/images/news/ImageForNews_714632_16533680880418469.jpg)
 
 ## ECG Image Classification
 ### An overview of Electrocardiogram (ECG or EKG) 
