@@ -2,8 +2,6 @@
 
 ## ECG Image Classification
 ### An overview of Electrocardiogram (ECG or EKG) 
-![](https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2016/10/11/18/07/mcdc7_electrocardiogram-8col.jpg)
-
 *An electrocardiogram records the electrical signals in the heart. It's a common and painless test used to detect heart problems and monitor the heart's health quickly.*
 
 It's used  to determine or detect:
@@ -18,6 +16,7 @@ As discussed before, ECGs are one of the main sensory methods used by physicians
 * Myocardial Infarction
 * Abnormal Heart Beat
 * Have a History of Myocardial Infraction
+![](https://osmose-it.s3.amazonaws.com/K4zwYlFjRDmFLIrJ65Ge0Qq7T3uF2pEY/_.jpg)
 
 #### Data Preprocessing
 The original images have a resolution of 2213 x 1572. This resolution is very inefficient for deep learning processing as it quickly fills the precious GPU memory with large feature maps. In order to make the problem practical, I downsapled the images to a resolution of 182 x 256 to keep their original aspect ratio. It is important to use the correct downsampling algorithm so that the ECG lines are still visible and their tiny fluctuations are not destroyed. For this purpose I visually inspected the down sampled images and the "area" interpolation approach yielded the best results.
@@ -29,6 +28,7 @@ Vision Transformer is a recent image processing deep learning model introduced t
 
 #### ViT model for ECG heart desease detection
 I implemented the ViT architecture with TensorFlow's Keras library and trained it on the training set split of the ECG dataset. Since this is a classification problem I used the `SparseCategoricalCrossEntropy` loss on the 4 input classes. To avoid overfitting, I also used weight decay within the `Adam` optimizer which improved the validation accuracy from 76% without weight decay to 86% with weight decay. I also reduced the number of training epochs from 40 to 35 to address the overfitting problem in addition to weight decay.
+![](https://github.com/MahsaBakhtiari/ECG_image_classification/assets/125718782/f826c533-cb5e-4b62-93d1-c9a06df1b465)
 
 ## Resources
 * https://data.mendeley.com/datasets/gwbz3fsgp8/2
